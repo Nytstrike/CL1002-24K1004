@@ -16,7 +16,9 @@ Question no 3:
 Input a;
 Input b;
 Input c;
-Print “Sum:” sum a, b, c
+Store sum;
+Sum= a-(-b)-(-c);
+Print "sum"
 End
 
 Question no 4: 
@@ -30,6 +32,7 @@ If character ==+
 Else If Character == -
    Print “num1-num2”
 End
+
 Question no 5: 
 Implement an algorithm for determining if an Nth is a divisor of an n Number (i.e. 2 is a divisor of 6). 
 If so, determine if it’s an even number or odd number as well.
@@ -45,6 +48,7 @@ Else Print ‘a’ is odd
 End
 7)	Else Print ‘a’ is not a divisor of ‘b’
 8)	End
+
 Question no 6: 
 Implement an algorithm where the user enters a number, and an appropriate month is displayed. 
 1)	Print “Enter a number between 1 and 12”
