@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+   
+int a,b,c;
+char op;
+printf("Enter number:");
+scanf("%d",&a);
+printf("Enter number:");
+scanf("%d",&b);
+getchar();
+  
+printf("Enter operator:");
+scanf("%c",&op);
+
+if(op=='+'){
+c=a+b;
+}
+else if (op=='-'){
+c=a-b;
+}
+else if (op=='*'){
+a*b;
+}
+else if (op=='/'){
+if (b==0){
+printf("Mathematical Error");}
+else 
+c=a/b;
+}
+else if (op=='%'){
+c=a%b;
+}
+printf("Result=%d",c);
+
+    return 0;
+}
