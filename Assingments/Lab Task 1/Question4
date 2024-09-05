@@ -1,0 +1,10 @@
+Create a small calculator which only does ‘+’ or ‘-‘Operations. 
+(Hint: Take three variable inputs with one being used for the operator)
+Input num1
+Input num2
+Input character
+If character ==+
+   Print “num1+num2”
+Else If Character == -
+   Print “num1-num2”
+End
