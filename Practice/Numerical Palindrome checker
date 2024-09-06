@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+
+int a,b;
+printf("Palindrome Checker\n");
+printf("Enter a 5 digit number:");
+scanf("%i",&a);
+if ( (a/10000==a%10) &&((a/1000)%10)==(a%100)/10)
+{
+    printf("Yes its a palindrome");
+}
+else {
+    printf("Not a Palindrome");
+}
+
+    return 0;
+}
