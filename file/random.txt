@@ -20,7 +20,7 @@ else if (op=='-'){
 c=a-b;
 }
 else if (op=='*'){
-a*b;
+c=a*b;
 }
 else if (op=='/'){
 if (b==0){
