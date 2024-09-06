@@ -1,7 +1,0 @@
-Input a;
-Input b;
-Input c;
-Store sum;
-Sum= a-(-b)-(-c);
-Print "sum"
-End
