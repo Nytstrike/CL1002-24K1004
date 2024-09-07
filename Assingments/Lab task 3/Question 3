@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    
+float a,b, c,d;
+printf("Enter monthly salary:");
+scanf("%f",&a);
+printf("Note:Input value in percentage without the percentage symbol.\n");
+printf("Enter monthly tax rate:");
+scanf("%f",&b);
+printf("\n");
+c= a*(b/100);
+d=a-c;
+printf("Your tax is:%.2f\n",c);
+
+printf("Your income is:%.2f",d);
+
+
+
+    return 0;
+}
