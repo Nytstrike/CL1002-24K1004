@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+float p,r,t,res;
+printf("Note: Enter numerical value b/w Rs 1 t0 Rs 1,000,000\n");
+printf("Enter principle value:");
+scanf("%f",&p);
+printf("Note: The rate can be b/w 5% & 10%\n");
+printf("Enter rate of interest:");
+scanf("%f",&r);
+printf("Note:Time period can be b/w 1years & 10years\n");
+printf("Enter time period:");
+scanf("%f",&t);
+res= (p*r*t)/100;
+printf("The simple interset is :%.2f",res);
+    return 0;
+}
