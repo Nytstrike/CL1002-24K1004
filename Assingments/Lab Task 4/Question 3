@@ -1,0 +1,39 @@
+int main() {
+
+float a,b,c;
+char op;
+printf("Enter number:");
+scanf("%f",&a);
+printf("Enter number:");
+scanf("%f",&b);
+printf("Enter operator:");
+scanf(" %c",&op);
+int i=0;
+switch(op){
+	case '+':
+		c=a+b;
+	break;
+	case '-':
+		c=a-b;
+	break;
+	case '*':
+		c=a*b;
+	break;
+	case '/':
+		if(b==0){
+			printf("Mathematical error");
+		}
+	    else
+	c=a/b;
+	break;
+    default:
+    	i=1;  	
+}
+if(i==0){
+	printf("\nResult=%.2f",c);
+}
+else 
+printf("Invalid Input");
+
+    return 0;
+}
