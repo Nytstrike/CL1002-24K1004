@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+int a,c;
+printf("Enter a number:");
+scanf("%d",&a);
+if (a>0 && a%2==0 && a%10==0)
+{
+    printf("Kuch bhi");
+}
+else
+{
+    printf("Mtlb yr kia kar rahe ho bhai");
+}
+}
