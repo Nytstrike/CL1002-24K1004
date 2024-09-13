@@ -8,7 +8,7 @@ if (in >= 'a' && in <='z'){
 }
 else if (in >= 'A' && in <= 'Z'){
     printf("It's a Upper case alphabet");}
-else if (in>=0 && in  <=9){
+else if (in>='0' && in  <='9'){
     printf("It's a numerical value");
 }
 else
