@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main(){
+ int a;
+ printf("\tEnter a number:");
+ scanf("%d",&a);
+ if (a>=1 &&a<=9){
+     switch(a){
+         case 1:
+         printf("\tone");
+         break;
+         case 2:
+         printf("\ttwo");
+         break;
+         case 3:
+         printf("\tthree");
+         break;
+         case 4:
+         printf("\tfour");
+         break;
+         case 5:
+         printf("\tfive");
+         break;
+         case 6:
+         printf("\tsix");
+         break;
+         case 7:
+         printf("\tseven");
+         break;
+         case 8:
+         printf("\teight");
+         break;
+         case 9:
+         printf("\tnine");
+         break;
+     }
+ }
+  else if (a>9){
+        printf("\tgreater than 9");
+    }
+else 
+    printf("\tInvalid input");
+}
