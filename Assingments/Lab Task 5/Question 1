@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(){
+    float n_c,f_g,p_c;
+    printf("\t\t\t\t\t\t\t------Calories Calculator------\n");
+    printf("Enter no. of Calories:");
+    scanf("%f",&n_c);
+    printf("Enter number of Fat grams:");
+    scanf("%f",&f_g);
+    if((n_c==0 || f_g==0) || n_c<f_g )
+    printf("Invalid Input");
+    else 
+    { p_c = (f_g*9)/n_c;
+     printf("TOtal number of Calories:%.2f",p_c);
+}
+   return 0; 
+}
