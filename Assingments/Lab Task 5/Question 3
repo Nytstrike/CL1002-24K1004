@@ -1,48 +1,53 @@
 #include<stdio.h>
 int main(){
     char ct,size;
-    int bt;
-    printf("Enter Coffee Type\n");
-    printf("Input w for white and B for black:");
+    float bt;
+    printf("Input w for white and B for black\n");    
+    printf("Enter Coffee Type:");
     scanf("%c",&ct);
+    printf("\nInput 's' for small\n 'm' for medium \n 'l' for large ");
     printf("\nEnter Size:");
     scanf(" %c",&size);
     bt=10;
-    if ((ct=='W' || ct=='w') && (size=='s'|| size=='S')){
-        printf("\nBrew time:%i min\n",bt);
-    printf("White Coffee\n");
-    printf("Ingredients :\n1.Coffee Grounds\n2.Water\n3.Creamer\n4.Sugar\n5.Stir well");
+    if (((ct=='W'||ct=='w')||(ct=='b'|| ct=='B'))&& (size=='s'||size=='S'||size=='m'|| size=='M'|| size=='l'|| size=='L')){
+        if((ct=='W')||ct=='w'){
+            printf("\nWhite Coffee\n");
+            printf("Description:\n");
+            if(size=='s'||size=='S'){
+                printf("236 ml\n"); 
+            }
+            else if(size=='m'||size=='M'){
+                bt+=bt*.15;
+                printf("355 ml\n");
+            }
+            else if(size=='l'||size=='L'){
+                bt+=bt*25;
+                printf("475 ml\n");
+            }
+        printf("Brew time:%.1f min",bt);
+        printf("\nIngredents:\n1.Water\n2.Coffee Grounds\n3.Creamer\n4.Sugar");
+        }
+    else if (ct=='b'|| ct=='B'){
+        if((ct=='b')||ct=='B'){
+            printf("\nBlack Coffee\n");
+            printf("Description:\n");
+            if(size=='s'||size=='S'){
+                printf("236 ml\n"); 
+            }
+            else if(size=='m'||size=='M'){
+                bt+=bt*.15;
+                printf("355 ml\n");
+            }
+            else if(size=='l'||size=='L'){
+                bt+=bt*25;
+                printf("475 ml\n");
+            }
+        printf("Brew time:%.1f min",bt);
+        printf("\nIngredents:\n1.Water\n2.Coffee Grounds\n3.Suger");
+        }
     }
-    else if ((ct=='W' || ct=='w') && (size=='m'|| size=='M')){
-        bt+=bt*.05;
-        printf("Brew time:%i mins\n",bt);
-    printf("White Coffee\n");
-    printf("Ingredients :\n1.Coffee Grounds\n2.Water\n3.Creamer\n4.Sugar\n5.Stir well");
     }
-    else if ((ct=='W' || ct=='w') && (size=='l'|| size=='L')){
-        bt+=bt*.25;
-        printf("Brew time:%i mins\n",bt);
-    printf("White Coffee\n");
-    printf("Ingredients :\n1.Coffee Grounds\n2.Water\n3.Creamer\n4.Sugar\n5.Stir well");
-    }
-   else if ((ct=='B' || ct=='b') && (size=='s'|| size=='S')){
-        printf("Brew time:%i mins\n",bt);
-    printf("Black Coffee\n");
-    printf("Ingredients :\n1.Coffee Grounds\n2.Water\n3.Sugar\n4.Stir well");
-    }
-    else if ((ct=='B' || ct=='b') && (size=='m'|| size=='M')){
-        bt+=bt*.05;
-        printf("Brew time:%i mins\n",bt);
-    printf("Black Coffee\n");
-    printf("Ingredients :\n1.Coffee Grounds\n2.Water\n3.Sugar\n4.Stir well");
-    } 
-    else if ((ct=='B' || ct=='b') && (size=='l'|| size=='L')){
-        bt+=bt*.25;
-    printf("Brew time:%i mins\n",bt);
-    printf("Black Coffee\n");
-    printf("Ingredients :\n1.Coffee Grounds\n2.Water\n3.Sugar\n4.Stir well");
-    }
-    else printf("Invalid Iput");
-    
-    
+else printf("\nInvalid Input");
 }
+
+    
