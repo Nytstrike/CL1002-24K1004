@@ -1,0 +1,6 @@
+#include<stdio.h>
+int main (){
+int num;
+printf("Enter a number:");
+scanf("%d",&num);
+(num%10==0)? printf("Last digit is zero"):printf("Non Zero");}
