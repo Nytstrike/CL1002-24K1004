@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main (){
+float gpa;
+printf("Enter GPA");
+scanf("%f",&gpa);
+(gpa>=0.00 && gpa<=.99)? printf("Semester Failed-Registration Suspended"):
+(gpa>=1.00 && gpa<=1.99)? printf("On probation for next month"):
+(gpa>=2.00 && gpa<=2.99)? :
+(gpa>=3.00 && gpa<=3.49)? printf("Deans list for the semester"):
+(gpa>=3.5 && gpa<=4.00)?printf("Highest Honour of Semester"):
+printf("Invalid Input");
+}
