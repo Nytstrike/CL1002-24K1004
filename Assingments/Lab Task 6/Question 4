@@ -1,0 +1,22 @@
+#include <stdio.h>
+// #include <maths.h>
+int main (){
+int u_input,temp_input,vol,result;
+result=0;
+vol=0;
+printf("Enter any number:");
+scanf("%d",&u_input);
+if (u_input<0)
+u_input*=-1;
+while (u_input<0){
+temp_input=u_input;
+vol= u_input%10;
+u_input/=10;
+vol= vol*vol*vol;
+result+=vol;
+}
+if(temp_input==result)
+printf("Its a armstrong number");
+else 
+printf("Not a armstronng number");
+}
