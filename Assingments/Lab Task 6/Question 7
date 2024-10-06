@@ -1,13 +1,13 @@
 #include<stdio.h>
 int main (){
-int i=65
+int i=65;
 for (i=65;i<=70;i++){
-    if (i==1 || i==6){
-        printf("%c %c %c %c %c %c\n",i,i+1,i+2,i+3,i+4,i+5);
+    if (i==65 || i==70){
+        printf("%c %c %c %c %c \n",i,i+1,i+2,i+3,i+4,i+5);
         
     }
     else
-        printf ("%c         %c\n",i+1,i+4);
+        printf ("%c       %c\n",i,i+4);
         
 }
 }
