@@ -1,0 +1,28 @@
+// Write a program that takes a string as input from the user and counts the frequency
+// of each vowel (A, E, I, O, U) in the string
+// Input: Hello World
+// Output: a=0, e=1, I=0, o=2, u= 0
+#include<stdio.h>
+#include<string.h>
+int main (){
+char str_g[100];
+int j,counter_a=0,counter_e=0,counter_i=0,counter_o=0,counter_u=0,length;
+printf("Enter a string:");
+scanf("%s",str_g);
+length=strlen(str_g);
+for (j=0;j<=length;j++){
+if(str_g[j]=='a' || str_g[j]=='A')
+counter_a++;
+else if(str_g[j]=='e' || str_g[j]=='E')
+counter_e++;
+else if (str_g[j]=='i' || str_g[j]=='I')
+counter_i++;
+else if (str_g[j]=='o' || str_g[j]=='O')
+counter_o++;
+else if (str_g[j]=='u' || str_g[j]=='U')
+counter_u++;
+else 
+continue;
+}
+printf("No of a's =%d\nNo of e's =%d\nNo of i's =%d\nNo of o's =%d\nNo of u's =%d",counter_a,counter_e,counter_i,counter_o,counter_u);
+}
