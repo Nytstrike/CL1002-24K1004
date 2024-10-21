@@ -2,6 +2,7 @@
 // of each vowel (A, E, I, O, U) in the string
 // Input: Hello World
 // Output: a=0, e=1, I=0, o=2, u= 0
+// For Adding a space use "_"
 #include<stdio.h>
 #include<string.h>
 int main (){
