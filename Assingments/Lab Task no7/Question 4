@@ -1,0 +1,23 @@
+// Write a program that calculates the length of a string using a pointer. Do not use the
+// built-in strlen() or sizeof() function. After length calculation reverse the string using
+// the same pointers
+#include<stdio.h>
+int main (){
+char input_string[100];
+int i,length=0,j;
+char *p_input=input_string;
+printf("For Spaces Use underscore\n");
+printf("Enter a string:");
+scanf("%s",input_string);
+while(*p_input!='\0'){
+    length++;
+    p_input++;
+}
+printf("%d",length);
+
+printf("\nReverse String:\n");
+for(j=length-1 ;j>=0 ;j--){
+printf("%c",input_string[j]);
+}
+
+}
