@@ -1,0 +1,18 @@
+// Write a program to read 10 integers into an array. Then, use loops to find the
+// frequency of each element in the array (how many times each number occurs).
+#include<stdio.h>
+int main (){
+int int_in[10],i;
+int frequency[100]={0};
+printf("Enter ten integers between 0 and 99\n");
+for(i=0;i<10;i++){
+printf("Input:");
+scanf("%d",&int_in[i]);
+ frequency[int_in[i]]++;
+}
+for(i=0;i<100;i++){
+if( frequency[i]>0 )
+  printf("\n%d :%d times\n",i,frequency[i]);
+}
+
+}
