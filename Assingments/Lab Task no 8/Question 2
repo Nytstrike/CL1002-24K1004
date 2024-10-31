@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int even_odd(int num) {
+    return num % 2 == 0; 
+}
+
+int main() {
+    int result[2][50][2]; 
+    int start, end;
+    int index = 0; 
+
+    printf("Start: ");
+    scanf("%d", &start);
+    printf("End: ");
+    scanf("%d", &end);
+
+    for (int num = start; num <= end; num++) {
+        if (even_odd(num)) { 
+            if (index < 50) { 
+                result[0][index][0] = num;
+                if (num + 1 <= end && even_odd(num + 1)) {
+                    result[0][index][1] = num + 1; 
+                } else {
+                    result[0][index][1] = -1;
+                }
+                index++;
+            }
+        } else { 
+            if (index < 50) { 
+                result[1][index][0] = num; 
+                  if (num + 1 <= end && !even_odd(num + 1)) {
+                    result[1][index][1] = num + 1; 
+                } else {
+                    result[1][index][1] = -1; 
+                }
+                index++; 
+            }
+        }
+    }
+       printf("\nEven Number Pairs:\n");
+    for (int j = 0; j < index; j++) {
+        if (result[0][j][1] != -1) { 
+            printf("(%d, %d)", result[0][j][0], result[0][j][1]);
+            if (j < index - 1) {
+                printf(", ");
+            }
+        }
+    }
+    printf("\n\nOdd Number Pairs:\n");
+    for (int k = 0; k < index; k++) {
+        if (result[1][k][1] != -1) { 
+            printf("(%d, %d)", result[1][k][0], result[1][k][1]);
+            if (k < index - 1) {
+                printf(", ");
+            }
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
