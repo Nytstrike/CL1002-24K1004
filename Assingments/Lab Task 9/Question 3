@@ -1,0 +1,20 @@
+//Implement a function that checks if a given integer is a prime number. Use this function in the
+//main program to check if numbers entered by the user are prime.
+#include<stdio.h>
+int prime_check(int num){
+    for(int i=2;i<num;i++){
+        if(num%i==0)
+            return 0;
+    }
+    return 1;
+}
+int main(){
+    int num_in;
+    printf("Enter Number:");
+    scanf("%d",&num_in);
+    if(prime_check(num_in)){
+        printf("Prime Number");
+    }
+    else 
+        printf("Not a Prime Number");    
+}
