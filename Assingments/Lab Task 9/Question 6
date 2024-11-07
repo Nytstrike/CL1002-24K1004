@@ -1,0 +1,28 @@
+//Create a function that returns the maximum and minimum element in an integer array. Use this
+//function in the main program to find the maximum and minimum from an array entered by the
+//user.
+#include<stdio.h>
+void min_max(int arr[],int size){
+    for(int i=0;i<size-1;i++){
+        if(arr[i]>arr[i+1]){
+            int temp=arr[i];
+            arr[i]=arr[i+1];
+            arr[i+1]=temp;
+        }
+    }
+    printf("\nThe Lowest value is :%d",arr[0]);
+    printf("\nThe Highest value is :%d",arr[size-1]);
+}
+int main (){
+    int in_value[100];
+    int size;
+    printf("Enter number of inputs:");
+    scanf("%d",&size);
+    for(int i=0;i<size;i++){
+        printf("\nEnter integer no%d:",i+1);
+        scanf("%d",&in_value[i]);
+    }
+    min_max(in_value,size);
+    return 0;
+    
+}
