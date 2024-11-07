@@ -1,0 +1,60 @@
+//Write a C program with a user-defined function calculate to perform basic arithmetic operations
+//such as addition, subtraction, multiplication, and division. The program should take two
+//numbers and an operation choice as input, and then use the function to perform the operation.
+#include<stdio.h>
+int calculator(int a,int b,char x){
+    int c;
+    switch(x){
+    case '+':
+    c=a+b;
+    return c;
+    break;
+    case '-':
+    c=a-b;
+    return c;
+    break;
+    case '*':
+    c=a*b;
+    return c;
+    break;
+    case '/':
+    if(b==0){
+        printf("Mathematical Error: Division by Zero\n");
+        return 0;
+        break;
+    }
+    else {
+        c=a/b;
+    }
+    return c;
+    break;
+    case '%':
+    if(b==0){
+        printf("Mathematical Error:Division by Zero\n");
+        return 0;
+        break;
+    }
+    else {
+        c=a%b;
+    }
+    return c;
+    break;
+    default:
+    printf("Invalid Input\n");
+    break;
+    }
+}
+    int main(){
+        int num1,num2;
+        char operation;
+        printf("\nEnter Number:");
+        scanf("%d",&num1);
+        printf("\nEnter operation:");
+        getchar();
+        scanf("%c",&operation);
+        printf("\nEnter Numer:");
+        scanf("%d",&num2);
+        int result=calculator(num1,num2,operation);
+        printf("\nThe Result is :%d",result);
+        return 0;
+    }
