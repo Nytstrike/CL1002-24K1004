@@ -1,0 +1,52 @@
+// Create a Function where it accepts a 2D array of strings where it sorts the string in the array
+// based on the first character’s ASCII Value in ascending order.
+// Example: {HELLO,JELLO,MELLO,TELLO,BELLO} //Input to function
+// Output from Function: {BELLO,HELLO,JELLO,MELLO,TELLO}
+// Hint: You can use the strcpy function for this to copy the array.
+#include<stdio.h>
+#include<string.h>
+void ASCII_sort(char arr[100][100],int n){
+int len[100];
+char temp_arr[100];
+    for(int i=0;i<n;i++){
+        len[i]=strlen(arr[i]);
+    }
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-1;j++){
+            if(arr[j][0]>arr[j+1][0]){
+            strcpy(temp_arr,arr[j]);
+            strcpy(arr[j],arr[j+1]);
+            strcpy(arr[j+1],temp_arr);
+        }
+        }
+    }
+    printf("{");
+for(int j=0;j<n;j++){
+    printf("%s,",arr[j]);
+}
+    printf("}");
+}
+int main(){
+    int num;
+    char in_stri[100][100];
+    printf("Enter Number of strings:");
+    scanf("%d",&num);
+    printf("{");
+    getchar();
+    for(int i=0;i<num;i++){
+        printf("Enter string no %d",i+1);
+        fgets(in_stri[i],100,stdin);
+        if(i<num-1){
+        printf(",");
+        }
+    int len=strlen(in_stri[i]);
+        if(in_stri[i][len-1]=='\n'){
+            in_stri[i][len-1]='\0';
+    }
+    }
+    printf("}\n");
+    ASCII_sort(in_stri,num);
+
+    return 0;
+    
+}
