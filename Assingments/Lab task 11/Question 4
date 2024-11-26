@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    float Maths;
+    float Science;
+    float English;
+} Marks;
+
+typedef struct {
+    char roll_no[6];
+    char name[15];
+    Marks mark_student;
+} Student;
+
+void details(Student s1[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("Enter Student Name: ");
+        fgets(s1[i].name, sizeof(s1[i].name), stdin);
+        s1[i].name[strcspn(s1[i].name, "\n")] = '\0'; 
+
+        printf("Enter Roll No: ");
+        fgets(s1[i].roll_no, sizeof(s1[i].roll_no), stdin);
+        s1[i].roll_no[strcspn(s1[i].roll_no, "\n")] = '\0'; 
+
+        printf("Enter Maths Marks: ");
+        scanf("%f", &s1[i].mark_student.Maths);
+
+        printf("Enter Science Marks: ");
+        scanf("%f", &s1[i].mark_student.Science);
+
+        printf("Enter English Marks: ");
+        scanf("%f", &s1[i].mark_student.English);
+
+        getchar(); 
+    }
+    printf("Data entry successful.\n");
+}
+
+void average(Student s1[], int size, float avg[]) {
+    for (int i = 0; i < size; i++) {
+        avg[i] = (s1[i].mark_student.Maths + s1[i].mark_student.Science + s1[i].mark_student.English) / 3;
+        printf("\nAverage marks for student %s (%s): %.2f\n", s1[i].name, s1[i].roll_no, avg[i]);
+    }
+}
+
+int main() {
+    Student s1[100] = {0};
+    int size = 0;
+    int choice;
+    float avg[100] = {0};
+
+    while (1) {
+        printf("\nChoose an action:\n");
+        printf("1. Enter student data\n");
+        printf("2. Calculate average marks\n");
+        printf("3. Quit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar(); // Clear newline left in input buffer
+
+        switch (choice) {
+            case 1:
+                printf("Enter the number of students (max 20): ");
+                scanf("%d", &size);
+                getchar();
+                details(s1,size);
+                break; 
+            case 2:
+                if (size != 0) {
+                    average(s1, size, avg);
+                } else {
+                    printf("No student data available. Please enter data first.\n");
+                }
+                break;
+
+            case 3:
+                printf("Exiting program.\n");
+                return 0;
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+}
