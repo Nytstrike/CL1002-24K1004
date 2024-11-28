@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void write_to_file(FILE *file, const char *filename) {
+    file = fopen(filename, "w");  
+    if (file == NULL) {
+        printf("Error opening file '%s' for writing.\n", filename);
+        exit(1);  
+    }
+    printf("Enter the data to write into %s: ", filename);
+    char input[100]; 
+    fgets(input, sizeof(input), stdin);
+    fputs(input, file); 
+    fclose(file);
+}
+
+void copy_file(const char *source_filename, const char *dest_filename) {
+    FILE *source = fopen(source_filename, "r"); 
+    if (source == NULL) {
+        printf("Error opening source file '%s'.\n", source_filename);
+        exit(1);
+    }
+
+    FILE *dest = fopen(dest_filename, "w"); 
+    if (dest == NULL) {
+        printf("Error opening destination file '%s'.\n", dest_filename);
+        fclose(source);
+        exit(1);
+    }
+
+    char ch;
+    while ((ch = fgetc(source)) != EOF) {
+        fputc(ch, dest);
+    }
+
+    fclose(source);
+    fclose(dest);
+    printf("File contents successfully copied from '%s' to '%s'.\n", source_filename, dest_filename);
+}
+
+int main() {
+    FILE *file = NULL;
+    const char *source_filename = "file1.txt";
+    const char *dest_filename = "file2.txt";
+    write_to_file(file, source_filename);
+    copy_file(source_filename, dest_filename);
+
+    return 0;
+}
