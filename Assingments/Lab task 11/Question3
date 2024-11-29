@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void replaceWordInFile(FILE *file, const char *oldWord, const char *newWord) {
+
+    fseek(file, 0, SEEK_END);
+    long fileSize = ftell(file);
+    fseek(file, 0, SEEK_SET);
+
+    char *buffer = (char *)malloc(fileSize + 1);
+    if (buffer == NULL) {
+        printf("Memory allocation failed!\n");
+        return;
+    }
+
+
+    fread(buffer, 1, fileSize, file);
+    buffer[fileSize] = '\0';  
+
+
+    freopen(NULL, "w", file);
+
+    char *pos = buffer;
+    while ((pos = strstr(pos, oldWord)) != NULL) {
+ 
+        fwrite(buffer, 1, pos - buffer, file);
+
+        fwrite(newWord, 1, strlen(newWord), file);
+
+        pos += strlen(oldWord);
+        buffer = pos;
+    }
+    fwrite(buffer, 1, strlen(buffer), file);
+    free(buffer);
+    printf("Replacement done successfully.\n");
+}
+
+int main() {
+    FILE *file = fopen("play.txt", "r+");
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    const char *oldWord = "oldword";  
+    const char *newWord = "newword";  
+
+    replaceWordInFile(file, oldWord, newWord);
+
+    fclose(file);
+    return 0;
+}
