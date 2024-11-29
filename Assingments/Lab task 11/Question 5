@@ -1,0 +1,25 @@
+// Define a structure Date with fields day, month, and year. Create another structure Event
+// with fields event_name, date (nested Date structure), and location. Write a program to
+// display all event details in a readable format.
+#include<stdio.h>
+#include<string.h>
+typedef struct{
+    int day;
+    int month;
+    int year;
+}DATE;
+int data_wrong(DATE date){
+    if(date.day>31){
+        return 1;
+    }
+    else if(date.month>12){
+        if((date.month==3 || date.month==6 || date.month==11 || date.month==9) && (date.day>30)){
+            return 1;
+    
+        }
+        return 1;
+    }
+    else if(date.year<1000 || date.year>9999 ){
+        return 1;
+    }
+}
